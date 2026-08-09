@@ -42,15 +42,12 @@
       <div class="sc-inner center-content">
         <span class="tag">📦 THODA LATE, PAR FULL EFFORT</span>
         <h1 class="display-title">Happy<br><em>Birthday,<br>Yaar!</em> 🎂</h1>
-        <p class="subtitle">Haan... pata hai. Wish karne mein thoda <strong>late</strong> ho gaya. 👀<br>Par yeh surprise teri expectations se upar hoga — pakka.</p>
 
-        <div class="gift-wrap" id="giftWrap">
-          <div class="gift-box" id="giftBox">
-            <div class="g-lid"><div class="g-bow"></div></div>
-            <div class="g-body"></div>
-          </div>
-          <p class="gift-label">Tap the gift ya button daba 🎁</p>
-        </div>
+        <button class="hero-photo" id="giftWrap" type="button" aria-label="Open birthday surprise">
+          <img src="assets/main photo.jpg" alt="Birthday girl in a yellow outfit" fetchpriority="high">
+        </button>
+
+        <p class="subtitle">Haan... pata hai. Wish karne mein thoda <strong>late</strong> ho gaya. 👀<br>Par yeh surprise teri expectations se upar hoga — pakka.</p>
 
         <button class="btn-main" id="enterBtn">Khol ke dekh →</button>
         <p class="micro-text">Timing pe mat jaa, effort dekh. 😤</p>
@@ -78,8 +75,10 @@
             <span class="gauge-label">Maafi Meter</span>
             <span class="gauge-val" id="gaugeVal">😡 Abhi toh gussa hai (15%)</span>
           </div>
-          <input type="range" id="gaugeSlider" min="0" max="100" value="15">
-          <div class="gauge-fill" id="gaugeFill"></div>
+          <div class="gauge-track">
+            <div class="gauge-fill" id="gaugeFill"></div>
+            <input type="range" id="gaugeSlider" min="0" max="100" value="15" aria-label="Maafi Meter">
+          </div>
           <p class="gauge-hint" id="gaugeHint">Slider ko right kheench ke maaf kar 👉</p>
         </div>
 
