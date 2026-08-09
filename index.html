@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday, Yaar! 🎂</title>
+  <meta name="description" content="Ek late lekin dil se birthday wish — memories, sorry aur celebration sab ek jagah." />
+  <meta name="theme-color" content="#0a0812" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+  <div class="grain"></div>
+
+  <!-- Top progress -->
+  <div class="top-progress"><div class="top-progress-fill" id="progressFill"></div></div>
+
+  <!-- Dot nav -->
+  <nav class="dot-nav" id="dotNav">
+    <button class="dot active" data-idx="0"></button>
+    <button class="dot" data-idx="1"></button>
+    <button class="dot" data-idx="2"></button>
+    <button class="dot" data-idx="3"></button>
+    <button class="dot" data-idx="4"></button>
+    <button class="dot" data-idx="5"></button>
+  </nav>
+
+  <!-- Sound toggle -->
+  <button class="sound-toggle" id="soundBtn" aria-label="Toggle sound">🔊</button>
+
+  <main id="app">
+
+    <!-- ===== SCENE 0 — ENTRANCE ===== -->
+    <section class="scene active" data-idx="0">
+      <div class="orb orb-pink"></div>
+      <div class="orb orb-purple"></div>
+      <div class="sc-inner center-content">
+        <span class="tag">📦 THODA LATE, PAR FULL EFFORT</span>
+        <h1 class="display-title">Happy<br><em>Birthday,<br>Yaar!</em> 🎂</h1>
+        <p class="subtitle">Haan... pata hai. Wish karne mein thoda <strong>late</strong> ho gaya. 👀<br>Par yeh surprise teri expectations se upar hoga — pakka.</p>
+
+        <div class="gift-wrap" id="giftWrap">
+          <div class="gift-box" id="giftBox">
+            <div class="g-lid"><div class="g-bow"></div></div>
+            <div class="g-body"></div>
+          </div>
+          <p class="gift-label">Tap the gift ya button daba 🎁</p>
+        </div>
+
+        <button class="btn-main" id="enterBtn">Khol ke dekh →</button>
+        <p class="micro-text">Timing pe mat jaa, effort dekh. 😤</p>
+      </div>
+    </section>
+
+    <!-- ===== SCENE 1 — SORRY / APOLOGY ===== -->
+    <section class="scene" data-idx="1">
+      <div class="orb orb-gold"></div>
+      <div class="sc-inner">
+        <span class="tag warning-tag">🥲 PEHLE MAAFI MAANG LETA HOON</span>
+        <h2 class="sec-title">Sorry Yaar,<br>Meri Galti.</h2>
+
+        <div class="sorry-note glass">
+          <p>Saare acche dost rakhke bhi kya karegi?</p>
+          <p><strong>Mere jaisa kharab dost bhi toh chahiye na. 😂</strong></p>
+          <hr>
+          <p>Birthday yaad tha... bas wish karne ka timing thoda <em>"2026 ke worst decisions"</em> mein chala gaya. 💀</p>
+          <p class="dim">Par sach mein — I'm genuinely sorry ki aaj wish nahi kar paaya properly.</p>
+        </div>
+
+        <!-- Forgiveness Slider -->
+        <div class="gauge-box glass">
+          <div class="gauge-top">
+            <span class="gauge-label">Maafi Meter</span>
+            <span class="gauge-val" id="gaugeVal">😡 Abhi toh gussa hai (15%)</span>
+          </div>
+          <input type="range" id="gaugeSlider" min="0" max="100" value="15">
+          <div class="gauge-fill" id="gaugeFill"></div>
+          <p class="gauge-hint" id="gaugeHint">Slider ko right kheench ke maaf kar 👉</p>
+        </div>
+
+        <!-- Excuse flip cards -->
+        <div class="excuse-row">
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-f glass"><span>⏳</span><h3>Time Zone Excuse</h3><small>Tap karke dekh ↺</small></div>
+              <div class="flip-b glass"><p>Mere hisaab se kisi aur timezone mein toh main early tha. 🌌 Technically galti nahi hai!</p></div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-f glass"><span>🧠</span><h3>Brain Crash</h3><small>Tap karke dekh ↺</small></div>
+              <div class="flip-b glass"><p>Birthday yaad tha par gift ideas process karte karte CPU crash ho gaya. Restart mein time laga. 💀</p></div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-f glass"><span>🛠️</span><h3>Website Bana Raha Tha</h3><small>Tap karke dekh ↺</small></div>
+              <div class="flip-b glass"><p>Normal log message bhejte hain. Main website bana raha tha — isme time lagta hai bhai. 😂</p></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-main next-btn">Chal ab sorry rehne de →</button>
+      </div>
+    </section>
+
+    <!-- ===== SCENE 2 — MEMORIES ===== -->
+    <section class="scene" data-idx="2">
+      <div class="sc-inner memories-page">
+        <span class="tag">📸 RANDOM CLICKS</span>
+        <h2 class="sec-title">Memories ❤️</h2>
+        <p class="memories-line">Memories yaad aayi??</p>
+
+        <div class="memory-gallery glass">
+          <img src="assets/1.jpeg" alt="Random memory 1" class="memory-img" loading="lazy">
+          <img src="assets/2.jpeg" alt="Random memory 2" class="memory-img" loading="lazy">
+          <img src="assets/3.jpeg" alt="Random memory 3" class="memory-img" loading="lazy">
+          <img src="assets/4.jpeg" alt="Random memory 4" class="memory-img" loading="lazy">
+          <img src="assets/shop1.jpeg" alt="Random memory 5" class="memory-img" loading="lazy">
+          <img src="assets/shop2.jpeg" alt="Random memory 6" class="memory-img" loading="lazy">
+        </div>
+
+        <button class="btn-main next-btn">Ek serious baat sun →</button>
+      </div>
+    </section>
+
+    <!-- ===== SCENE 3 — HEARTFELT LETTER ===== -->
+    <section class="scene" data-idx="3">
+      <div class="orb orb-pink small-orb"></div>
+      <div class="sc-inner center-content">
+        <span class="tag">💌 BAKCHODI CHHOD KE EK MINUTE</span>
+        <h2 class="sec-title">Waise Ek Baat Bolu?</h2>
+
+        <div class="letter glass">
+          <div class="letter-stamp">✉️</div>
+          <div class="letter-body" id="letterBody">
+            <p>Tu genuinely un logon mein se hai jinke saath <strong>normal conversation bhi memory ban jaati hai.</strong></p>
+            <p>Kabhi hasi, kabhi bakchodi, kabhi arguments, kabhi bina reason ke late night conversations...</p>
+            <p>Zyada emotional nahi hona — par sach mein, <strong>dosti teri jaise logon ki wajah se valuable lagti hai.</strong></p>
+            <p>Jab tak tere jaise log hain life mein, boring toh nahi hogi. 😤✨</p>
+          </div>
+          <div class="hearts-float" id="heartsFloat"></div>
+        </div>
+
+        <button class="btn-main next-btn">Ab cake aur actual wish →</button>
+      </div>
+    </section>
+
+    <!-- ===== SCENE 4 — CAKE & CELEBRATION ===== -->
+    <section class="scene" data-idx="4">
+      <div class="confetti-box" id="confettiBox"></div>
+      <canvas id="fwCanvas"></canvas>
+      <div class="sc-inner center-content">
+        <span class="tag glow-tag">🥳 AB ACTUAL WISH</span>
+        <h2 class="grand-heading">Happy Birthday,<br><em>Yaar!</em> 🎂</h2>
+
+        <!-- CSS Cake -->
+        <div class="cake-area" id="cakeArea">
+          <div class="cake-glow-ring"></div>
+          <div class="cake-struct">
+            <div class="cake-plate"></div>
+            <div class="clayer cl-1"></div>
+            <div class="clayer cl-2"></div>
+            <div class="clayer cl-3"></div>
+            <div class="cake-icing"></div>
+            <div class="candle-row">
+              <div class="cndl" data-c="1"><div class="flm" id="f1"></div><div class="smk" id="s1"></div></div>
+              <div class="cndl" data-c="2"><div class="flm" id="f2"></div><div class="smk" id="s2"></div></div>
+              <div class="cndl" data-c="3"><div class="flm" id="f3"></div><div class="smk" id="s3"></div></div>
+            </div>
+          </div>
+          <button class="btn-blow" id="blowBtn">🌬️ <span id="blowLabel">Candles Blow Kar</span></button>
+        </div>
+
+        <div class="wish-block">
+          <p class="wish-line">Yeh saal tujhe woh sab de jo tu deserve karti hai — khushiyan, success, peace of mind, aur obviously...</p>
+          <p class="wish-big">thodi aur bakchodi mere saath. 😌</p>
+          <p class="wish-line">Jaise hai waise hi reh. Duniya mein tere jaise kam log hain — genuine, funny, aur thode se pagal. ✨</p>
+        </div>
+
+        <button class="btn-main next-btn">Ek last surprise hai →</button>
+      </div>
+    </section>
+
+    <!-- ===== SCENE 5 — VOUCHERS & GOODBYE ===== -->
+    <section class="scene" data-idx="5">
+      <div class="orb orb-gold small-orb"></div>
+      <div class="sc-inner center-content">
+        <span class="tag">🎟️ BIRTHDAY VOUCHER COLLECTION</span>
+        <h2 class="sec-title">Tere Liye<br>Special Vouchers 🎁</h2>
+        <p class="section-sub">Har ek voucher legit hai. Kisi bhi din redeem kar sakti hai. No excuses. 😤</p>
+
+        <div class="voucher-stack" id="voucherStack">
+          <div class="voucher glass">
+            <div class="v-ribbon">VALID FOREVER</div>
+            <h3>🍕 1x Free Pizza + Drinks</h3>
+            <p>Jab chahe, jahan chahe. Bill mera. Zero argument.</p>
+          </div>
+          <div class="voucher glass">
+            <div class="v-ribbon">UNLIMITED</div>
+            <h3>🗣️ Unlimited Ranting Pass</h3>
+            <p>Vent karna ho toh bata. 100% active listening, zero judgment guaranteed.</p>
+          </div>
+          <div class="voucher glass">
+            <div class="v-ribbon">1x USE</div>
+            <h3>🛡️ Late Wish Immunity Card</h3>
+            <p>Agar next year bhi late hua — yeh card dikha dena. Instant maafi.</p>
+          </div>
+          <div class="voucher glass">
+            <div class="v-ribbon">ANYTIME</div>
+            <h3>🎬 Movie Night — Teri Choice</h3>
+            <p>Full control tera. Movie, snacks, timing — koi complaint nahi karunga.</p>
+          </div>
+          <div class="voucher glass">
+            <div class="v-ribbon">FOREVER</div>
+            <h3>☕ Chai/Coffee Date On Me</h3>
+            <p>Jab bhi mann kare — ek acchi si cafe mein baithke gossip session. Bill mera.</p>
+          </div>
+        </div>
+
+        <div class="final-box glass">
+          <p>Aur haan — next year wish late hua toh website nahi banaunga.</p>
+          <p><strong>Maybe. 👀</strong></p>
+        </div>
+
+        <button class="btn-secondary" id="replayBtn">Phir se dekh ↻</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <img id="lbImg" src="" alt="Memory">
+    <p class="lb-cap" id="lbCap"></p>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
